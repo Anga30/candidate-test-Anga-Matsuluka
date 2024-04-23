@@ -1,0 +1,21 @@
+
+table.table-module-detail> :not(caption) > tr > td,
+table.table-module-detail> :not(caption) > tr > th {
+    background-color: #d9d9d9 !important;
+}
+
+table.table-module-detail > :not(caption) > tr > :nth-child(2n) {
+    background-color: #f2f2f2 !important;
+}
+
+table.table-module-detail {
+    box-shadow: 0 0 4px grey;
+}
+
+.content-body {
+    padding: 15px;
+}
+
+.accordion-flush .accordion-item {
+    margin-bottom: 5px;
+}

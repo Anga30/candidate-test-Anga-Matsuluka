@@ -1,0 +1,310 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/module/lt_case/create": {
+            "post": {
+                "summary": "Creates a case",
+                "operationId": "dcff25bdce40c65bf4fa414751976874",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "first_name": {
+                                        "type": "string"
+                                    },
+                                    "last_name": {
+                                        "type": "string"
+                                    },
+                                    "phone": {
+                                        "oneOf": [
+                                            {
+                                                "type": "string"
+                                            },
+                                            {
+                                                "type": "integer"
+                                            }
+                                        ]
+                                    },
+                                    "id_number": {
+                                        "oneOf": [
+                                            {
+                                                "type": "string"
+                                            },
+                                            {
+                                                "type": "integer"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "first_name": "Nelson",
+                                    "last_name": "Mandela",
+                                    "phone": "0123456789",
+                                    "id_number": "1807180000000"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/module/lt_case/get/{id}": {
+            "get": {
+                "summary": "Gets a case",
+                "operationId": "58d420b7a8a9f9bf16c83c6324704e3d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "examples": {
+                            "int": {
+                                "summary": "Case 1",
+                                "value": "1"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/module/lt_customer/create": {
+            "post": {
+                "summary": "Creates a customer",
+                "operationId": "eeb41b3e95551986ca77ca01c8870bc4",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "first_name": {
+                                        "type": "string"
+                                    },
+                                    "last_name": {
+                                        "type": "string"
+                                    },
+                                    "phone": {
+                                        "oneOf": [
+                                            {
+                                                "type": "string"
+                                            },
+                                            {
+                                                "type": "integer"
+                                            }
+                                        ]
+                                    },
+                                    "id_number": {
+                                        "oneOf": [
+                                            {
+                                                "type": "string"
+                                            },
+                                            {
+                                                "type": "integer"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "first_name": "Nelson",
+                                    "last_name": "Mandela",
+                                    "phone": "0123456789",
+                                    "id_number": "1807180000000"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/module/lt_customer/get/{id}": {
+            "get": {
+                "summary": "Gets a customer",
+                "operationId": "88e1c671458ce1dd4429ed407cc999d2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "examples": {
+                            "int": {
+                                "summary": "Customer 1",
+                                "value": "1"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/module/lt_case/{id}/remove-customer": {
+            "put": {
+                "summary": "Removes a customer from a case",
+                "operationId": "2f586d6ef0dc5454433fef5ac04f7076",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Case id",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "examples": {
+                            "int": {
+                                "summary": "Case 1",
+                                "value": "1"
+                            }
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "id_number": {
+                                        "oneOf": [
+                                            {
+                                                "type": "string"
+                                            },
+                                            {
+                                                "type": "integer"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id_number": "1807180000000"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/module/lt_case/{id}/add-customer": {
+            "put": {
+                "summary": "Adds a customer to a case",
+                "operationId": "814ce51ebf50e955f0072cc0d2df9d2d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Case id",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "examples": {
+                            "int": {
+                                "summary": "Case 1",
+                                "value": "1"
+                            }
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "id_number": {
+                                        "oneOf": [
+                                            {
+                                                "type": "string"
+                                            },
+                                            {
+                                                "type": "integer"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id_number": "1807180000000"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/lists/customers": {
+            "get": {
+                "summary": "Gets list of customers showing first_name, last_name and id_number",
+                "operationId": "a4dd4a6244982c267ab02049de90d816",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/lists/customers/with-policy-names": {
+            "get": {
+                "summary": "Gets list of customers showing first_name, last_name, id_number, id_number_status",
+                "operationId": "f20f2cc0b8884b30e57c922fdaa316d8",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/lists/customers/update-id-number-status": {
+            "put": {
+                "summary": "Updates the status of an id number based on the id number that's currently stored for each customer",
+                "operationId": "fbc9e3fc0803120b39c631450341e6e5",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    }
+}
